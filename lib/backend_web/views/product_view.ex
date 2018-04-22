@@ -1,6 +1,6 @@
 defmodule BackendWeb.ProductView do
   use BackendWeb, :view
-  alias BackendWeb.ProductView
+  alias BackendWeb.{ProductView, UserView}
 
   def render("index.json", %{products: products}) do
     %{data: render_many(products, ProductView, "product.json")}

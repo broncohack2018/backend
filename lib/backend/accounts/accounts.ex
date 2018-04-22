@@ -55,6 +55,12 @@ defmodule Backend.Accounts do
     |> Repo.insert()
   end
 
+  def create_user!(attrs \\ %{}) do
+    %User{}
+    |> User.changeset(attrs)
+    |> Repo.insert!()
+  end
+
   @doc """
   Updates a user.
 

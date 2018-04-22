@@ -2,6 +2,7 @@ defmodule Backend.Platform.Product do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Backend.Platform.{User}
 
   schema "products" do
     field :description, :string
@@ -9,7 +10,8 @@ defmodule Backend.Platform.Product do
     field :name, :string
     field :price, :float
     field :story, :string
-    field :user_id, :id
+
+    belongs_to :user, User
 
     timestamps()
   end
