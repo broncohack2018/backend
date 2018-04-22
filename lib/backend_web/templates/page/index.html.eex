@@ -1,36 +1,57 @@
-<div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
-</div>
-
-<div class="row marketing">
-  <div class="col-lg-6">
-    <h4>Resources</h4>
-    <ul>
-      <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="https://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-    </ul>
+<section class="hero is-medium is-primary is-bold">
+  <span style="font-size:30px;cursor:pointer">
+  <img src="/images/nativendor_logo_latest.png">
+  </span>
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-8-desktop is-offset-2-desktop">
+          <h1 class="title is-2 is-spaced">
+            Nativendor Marketplace
+          </h1>
+          <h2 class="subtitle is-4">
+              Lorem ipsum dolor <strong>amet</strong> sit.
+              <br>
+              Lorem ipsum dolor <strong>amet</strong> sit.
+              <br>
+          </h2>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="col-lg-6">
-    <h4>Help</h4>
-    <ul>
-      <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
-      </li>
-      <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
-      </li>
-    </ul>
-  </div>
-</div>
+    <section id="cards" class="section columns"> 
+      <!--card-->
+<%= for product <- @products do %>
+      <a> 
+      <div class="card column">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="<%= Backend.ProductImage.url({product.image, product}) %>" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4"><%= product.name%></p>
+            </div>
+          </div>
+
+          <div class="content">
+            <h3>Story:</h3>
+            <%= product.story %>
+          </div>
+          <div class="content">
+            <h3>Description:</h3>
+            <%= product.description %>
+          </div>
+          <div class="content">
+            <h3>Feature:</h3>
+            <%= product.feature %>
+          </div>
+        </div>
+      </div>
+      </a>
+<% end %>
+</section> 
