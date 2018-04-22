@@ -57,7 +57,7 @@ users = [
   },
   %{
     email: "abbo.dembe@example.com",
-    first_name: "Abbo ",
+    first_name: "Abbo",
     last_name: "Dembe"
   },
 ]
