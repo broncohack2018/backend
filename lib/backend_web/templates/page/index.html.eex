@@ -18,37 +18,18 @@
   </div>
 </section>
 
-    <section id="cards" class="section columns"> 
       <!--card-->
-<%= for product <- @products do %>
+  <%= for product <- @products do %>
+    <div class="column">
       <%= link to: page_path(@conn, :show, product.id), class: "" do %>
-      <div class="card column">
-        <div class="card-image">
+        <div class="is-one-third">
           <figure class="image is-4by3">
-            <img src="<%= Backend.ProductImage.url({product.image, product}) %>" alt="Placeholder image">
+            <img src="<%= Backend.ProductImage.url({product.image, product}) %>" alt="">
           </figure>
         </div>
-        <div class="card-content">
-            <div class="media">
-              <div class="media-content">
-                <p class="title is-4"><%= product.name%></p>
-            </div>
-          </div>
-
-          <div class="content">
-            <h3>Story:</h3>
-            <%= product.story %>
-          </div>
-          <div class="content">
-            <h3>Description:</h3>
-            <%= product.description %>
-          </div>
-          <div class="content">
-            <h3>Feature:</h3>
-            <%= product.feature %>
-          </div>
+        <div class="is-two-thirds">
+          <p class="title is-4"><%= product.name%></p>
         </div>
-      </div>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
-</section> 
