@@ -1,6 +1,6 @@
 <div class="columns">
   <div class="column is-half">
-    <p class="title is-4"><%= @product.name%></p>
+    <h2 class="title is-4"><%= @product.name%></h2>
     <figure class="image is-4by3">
       <img src="<%= Backend.ProductImage.url({@product.image, @product}) %>" alt="Placeholder image">
     </figure>
@@ -17,6 +17,11 @@
     <div class="content">
       <h3>Feature:</h3>
       <%= @product.feature %>
+    </div>
+    <div class="content">
+      <h3>Made By:</h3>
+      <img src="<%= Backend.UserIcon.url({@product.user.icon, @product.user}) %>" class="image is-64x64" alt="">
+      <p class=""><%= @product.user.first_name %> <%= @product.user.last_name %></p>
     </div>
     <a class="button is-primary">Buy</a>
   </div>

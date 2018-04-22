@@ -47,9 +47,9 @@
             </div>
             <div class="column is-two-thirds">
               <p class="title is-4"><%= product.name %></p>
-              <p class=""><%= product.story %></p>
-              <p class="">BY <%= product.user.first_name %> <%= product.user.last_name %></p>
-              <img src="<%= Backend.UserIcon.url({product.user.icon, product.user}) %>" class="image is-64x64" alt="">
+              <p><%= product.story %></p>
+              <p class="pull-right">BY <%= product.user.first_name %> <%= product.user.last_name %></p>
+              <img src="<%= Backend.UserIcon.url({product.user.icon, product.user}) %>" class="image is-64x64 pull-right" alt="">
             </div>
           </div>
         </div>
