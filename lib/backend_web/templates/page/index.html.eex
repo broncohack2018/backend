@@ -21,20 +21,38 @@
       <!--card-->
   <%= for product <- @products do %>
     <%= link to: page_path(@conn, :show, product.id), class: "" do %>
-                           <div class="card">
-      <div class="columns">
-        <div class="column is-one-third">
-          <figure class="image is-4by3">
-            <img src="<%= Backend.ProductImage.url({product.image, product}) %>" alt="">
-          </figure>
+      <%= if rem(product.id, 2) == 0 do %>
+        <div class="card">
+          <div class="columns">
+            <div class="column is-two-thirds">
+              <p class="title is-4"><%= product.name %></p>
+              <p class=""><%= product.story %></p>
+              <p class="">BY <%= product.user.first_name %> <%= product.user.last_name %></p>
+              <img src="<%= Backend.UserIcon.url({product.user.icon, product.user}) %>" class="image is-64x64" alt="">
+            </div>
+            <div class="column is-one-third">
+              <figure class="image is-4by3">
+                <img src="<%= Backend.ProductImage.url({product.image, product}) %>" alt="">
+              </figure>
+            </div>
+          </div>
         </div>
-        <div class="column is-two-thirds">
-          <p class="title is-4"><%= product.name %></p>
-          <p class=""><%= product.story %></p>
-          <p class="">BY <%= product.user.first_name %> <%= product.user.last_name %></p>
-          <img src="<%= Backend.UserIcon.url({product.user.icon, product.user}) %>" class="image is-64x64" alt="">
+      <% else %>
+        <div class="card">
+          <div class="columns">
+            <div class="column is-one-third">
+              <figure class="image is-4by3">
+                <img src="<%= Backend.ProductImage.url({product.image, product}) %>" alt="">
+              </figure>
+            </div>
+            <div class="column is-two-thirds">
+              <p class="title is-4"><%= product.name %></p>
+              <p class=""><%= product.story %></p>
+              <p class="">BY <%= product.user.first_name %> <%= product.user.last_name %></p>
+              <img src="<%= Backend.UserIcon.url({product.user.icon, product.user}) %>" class="image is-64x64" alt="">
+            </div>
+          </div>
         </div>
-      </div>
-                                             </div>
+      <% end %>
     <% end %>
   <% end %>
