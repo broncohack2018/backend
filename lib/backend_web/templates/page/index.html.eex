@@ -20,16 +20,21 @@
 
       <!--card-->
   <%= for product <- @products do %>
-    <div class="column">
-      <%= link to: page_path(@conn, :show, product.id), class: "" do %>
-        <div class="is-one-third">
+    <%= link to: page_path(@conn, :show, product.id), class: "" do %>
+                           <div class="card">
+      <div class="columns">
+        <div class="column is-one-third">
           <figure class="image is-4by3">
             <img src="<%= Backend.ProductImage.url({product.image, product}) %>" alt="">
           </figure>
         </div>
-        <div class="is-two-thirds">
-          <p class="title is-4"><%= product.name%></p>
+        <div class="column is-two-thirds">
+          <p class="title is-4"><%= product.name %></p>
+          <p class=""><%= product.story %></p>
+          <p class="">BY <%= product.user.first_name %> <%= product.user.last_name %></p>
+          <img src="<%= Backend.UserIcon.url({product.user.icon, product.user}) %>" class="image is-64x64" alt="">
         </div>
-      <% end %>
-    </div>
+      </div>
+                                             </div>
+    <% end %>
   <% end %>
