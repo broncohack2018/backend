@@ -20,7 +20,7 @@ defmodule Backend.Mixfile do
   def application do
     [
       mod: {Backend.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :ex_aws, :hackney, :poison, :arc_ecto]
     ]
   end
 
@@ -40,7 +40,13 @@ defmodule Backend.Mixfile do
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:arc_ecto, "~> 0.7.0"},
+      {:arc, "~> 0.8.0"},
+      {:ex_aws, "~> 1.1"},
+      {:hackney, "~> 1.6"},
+      {:poison, "~> 3.1"},
+      {:sweet_xml, "~> 0.6"}
     ]
   end
 

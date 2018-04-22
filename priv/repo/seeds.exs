@@ -45,9 +45,9 @@ products = [
     |> Accounts.create_user!
     |> Platform.from_accounts
     |> Platform.create_product!(products |> Enum.at(n))
-    # |> Platform.update_product!(%{image: %Plug.Upload{
-      # content_type: "image/jpg",
-      # filename: "#{Enum.at(products, n).name}.jpg",
-      # path: "apps/backend/priv/static/images/product_#{n}.jpg",
-    # }})
+    |> Platform.update_product!(%{image: %Plug.Upload{
+      content_type: "image/jpg",
+      filename: "#{Enum.at(products, n).name}.jpg",
+      path: "priv/static/images/product_#{n+1}.jpg",
+    }})
 end)

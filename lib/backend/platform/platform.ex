@@ -13,7 +13,6 @@ defmodule Backend.Platform do
     %User{id: user_id}
   end
 
-
   @doc """
   Returns the list of products.
 
@@ -85,6 +84,12 @@ defmodule Backend.Platform do
     product
     |> Product.changeset(attrs)
     |> Repo.update()
+  end
+
+  def update_product!(%Product{} = product, attrs) do
+    product
+    |> Product.changeset(attrs)
+    |> Repo.update!()
   end
 
   @doc """
