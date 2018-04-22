@@ -39,15 +39,43 @@ products = [
   }
 ]
 
+users = [
+  %{
+    email: "zane.akwasi@example.com",
+    first_name: "Zane",
+    last_name: "Akwasi"
+  },
+  %{
+    email: "rachel.armah@example.com",
+    first_name: "Rachel",
+    last_name: "Armah"
+  },
+  %{
+    email: "jassahlina.ladha@example.com",
+    first_name: "Jassahlina",
+    last_name: "Ladha"
+  },
+  %{
+    email: "abbo.dembe@example.com",
+    first_name: "Abbo ",
+    last_name: "Dembe"
+  },
+]
+
 0..3
 |> Enum.each(fn n ->
   %{email: "test#{n}@example.com", first_name: "first #{n}", last_name: "last #{n}"}
     |> Accounts.create_user!
+    |> Accounts.update_user!(%{icon: %Plug.Upload{
+      content_type: "image/jpg",
+      filename: "#{Enum.at(users, n).email}.jpg",
+      path: "priv/static/images/users/#{n}.jpg",
+    }})
     |> Platform.from_accounts
     |> Platform.create_product!(products |> Enum.at(n))
     |> Platform.update_product!(%{image: %Plug.Upload{
       content_type: "image/jpg",
       filename: "#{Enum.at(products, n).name}.jpg",
-      path: "priv/static/images/product_#{n+1}.jpg",
+      path: "priv/static/images/products/#{n}.jpg",
     }})
 end)

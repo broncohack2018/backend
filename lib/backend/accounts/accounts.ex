@@ -79,6 +79,12 @@ defmodule Backend.Accounts do
     |> Repo.update()
   end
 
+  def update_user!(%User{} = user, attrs) do
+    user
+    |> User.changeset(attrs)
+    |> Repo.update!()
+  end
+
   @doc """
   Deletes a User.
 

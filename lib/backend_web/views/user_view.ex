@@ -12,13 +12,18 @@ defmodule BackendWeb.UserView do
 
   def render("user.json", %{user: user}) do
     %{id: user.id,
-      email: user.email}
+      email: user.email,
+      first_name: user.first_name,
+      last_name: user.last_name,
+      icon_url: Backend.UserIcon.url({user.icon, user}, :thumb)
+    }
   end
 
   def render("public_user.json", %{user: user}) do
     %{id: user.id,
       first_name: user.first_name,
-      last_name: user.last_name
+      last_name: user.last_name,
+      icon_url: Backend.UserIcon.url({user.icon, user}, :thumb)
     }
   end
 end

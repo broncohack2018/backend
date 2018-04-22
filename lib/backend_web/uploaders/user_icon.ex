@@ -1,4 +1,4 @@
-defmodule Backend.ProductImage do
+defmodule Backend.UserIcon do
   use Arc.Definition
   use Arc.Ecto.Definition
 
@@ -20,7 +20,7 @@ defmodule Backend.ProductImage do
   end
 
   def storage_dir(_, {_, scope}) do
-    "uploads/products"
+    "uploads/users"
   end
 
   def __storage do
