@@ -4,7 +4,8 @@ defmodule Backend.Platform.User do
   alias Backend.Platform.{Product}
 
   schema "users" do
-    field :email, :string
+    field :last_name, :string
+    field :first_name, :string
 
     has_many :products, Product
   end

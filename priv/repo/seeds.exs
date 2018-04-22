@@ -41,7 +41,7 @@ products = [
 
 0..3
 |> Enum.each(fn n ->
-  %{email: "test#{n}@example.com"}
+  %{email: "test#{n}@example.com", first_name: "first #{n}", last_name: "last #{n}"}
     |> Accounts.create_user!
     |> Platform.from_accounts
     |> Platform.create_product!(products |> Enum.at(n))

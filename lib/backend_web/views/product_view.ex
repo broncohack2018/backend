@@ -16,7 +16,7 @@ defmodule BackendWeb.ProductView do
       story: product.story,
       description: product.description,
       feature: product.feature,
-      user: render_one(product.user, UserView, "user.json"),
+      user: render_one(product.user, UserView, "public_user.json"),
       price: product.price,
       image_url: Backend.ProductImage.url({product.image, product}, :thumb)
     }

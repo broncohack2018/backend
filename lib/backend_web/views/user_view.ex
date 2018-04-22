@@ -14,4 +14,11 @@ defmodule BackendWeb.UserView do
     %{id: user.id,
       email: user.email}
   end
+
+  def render("public_user.json", %{user: user}) do
+    %{id: user.id,
+      first_name: user.first_name,
+      last_name: user.last_name
+    }
+  end
 end
