@@ -13,7 +13,7 @@
 alias Backend.{Platform, Accounts}
 
 products = [
-  %{name: "Product 1",
+  %{name: "Genuine African Bracelet",
     description: "Ghana's famed Gye Nyame symbol takes shape in ebony wood, its rotating form understood as 'I fear none except God.' Known as an adinkra symbol, this image is revered throughout the country. Ali Mohammed displays the pendant on a brown leather cord necklace.",
     price: 39.99,
     feature: "Soapstone and bauxite with brass hooks Natural stone - some variations in color and/or pattern are to be expected Hook earrings 0.63 oz Length: 2.2'x 0.7' W",
