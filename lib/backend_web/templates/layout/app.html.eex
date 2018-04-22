@@ -7,10 +7,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Backend!</title>
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <title>Nativendor</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
@@ -25,9 +25,8 @@
         </span>
         <div class="nav-right nav-menu">
           <%= link "Home", to: page_path(@conn, :index), class: "nav-item is-active" %>
-          <%= link "Forums", to: page_path(@conn, :index), class: "nav-item" %>
-          <%= link "New Note", to: page_path(@conn, :index), class: "nav-item" %>
-          <%= link "Dashboard", to: page_path(@conn, :index), class: "nav-item" %>
+          <%= link "Products", to: page_path(@conn, :index), class: "nav-item" %>
+          <%= link "New Product", to: page_path(@conn, :index), class: "nav-item" %>
         </div>
       </div>
     </header>

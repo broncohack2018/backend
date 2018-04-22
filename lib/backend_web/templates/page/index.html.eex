@@ -10,10 +10,7 @@
             Nativendor Marketplace
           </h1>
           <h2 class="subtitle is-4">
-              Lorem ipsum dolor <strong>amet</strong> sit.
-              <br>
-              Lorem ipsum dolor <strong>amet</strong> sit.
-              <br>
+            An easy to use digital marketplace that connects craftsmen in poor areas of the world to buyers in developed nations.
           </h2>
         </div>
       </div>
@@ -24,7 +21,7 @@
     <section id="cards" class="section columns"> 
       <!--card-->
 <%= for product <- @products do %>
-      <a> 
+      <%= link to: page_path(@conn, :show, product.id), class: "" do %>
       <div class="card column">
         <div class="card-image">
           <figure class="image is-4by3">
@@ -52,6 +49,6 @@
           </div>
         </div>
       </div>
-      </a>
+  <% end %>
 <% end %>
 </section> 

@@ -42,7 +42,7 @@ defmodule Backend.Platform do
       ** (Ecto.NoResultsError)
 
   """
-  def get_product!(id), do: Repo.get!(Product, id)
+  def get_product!(id), do: Product |> preload(:user) |> Repo.get!(id)
 
   @doc """
   Creates a product.
